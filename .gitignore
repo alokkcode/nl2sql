@@ -1,0 +1,24 @@
+# Don't track env files
+.env
+*.env
+
+# Node modules & build artifacts
+node_modules/
+dist/
+build/
+
+# Data folders you DON'T want on GitHub
+commerce-data/
+warehouse-data/
+nl2sql-test/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,152 @@
+body, h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin-top: 10px !important;
+  padding-top: 0 !important;
+}
+
+:root {
+  --bg: #fafafa;
+  --card-bg: #ffffff;
+  --text: #222;
+  --border: #e5e5e5;
+  --accent: #ff7a00;
+  --accent-hover: #ff5900;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 780px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.3rem;
+  color: var(--accent);
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+button.secondary {
+  background-color: #444;
+}
+
+button.secondary:hover {
+  background-color: #222;
+}
+
+.readonly {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border-bottom: 1px solid var(--border);
+  padding: 8px;
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+
+#dbSelect {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  appearance: none; /* remove default arrow */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23222' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px;
+  padding-right: 40px;
+}
+
+#dbSelect:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+#dbSelect:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255,122,0,0.25);
+}

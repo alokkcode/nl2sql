@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin — Database Config</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      margin-top: 6px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header style="padding:20px;">
+  <button onclick="goBack()" class="secondary">⬅ Back</button>
+</header>
+
+<main class="container">
+  <h1>Database Configuration</h1>
+  <p class="subtitle">Connect your MySQL database securely.</p>
+
+  <div class="card">
+    <h3>Enter Database Connection</h3>
+
+    <label>Friendly Name</label>
+    <input id="cfgName" placeholder="e.g. Production DB">
+
+    <label>Connection String (optional)</label>
+    <input id="connStr" placeholder="mysql://user:pass@host:3306/dbname">
+
+    <h4>OR Fill Manually</h4>
+
+    <label>Host</label>
+    <input id="host">
+
+    <label>User</label>
+    <input id="dbUser">
+
+    <label>Password</label>
+    <input id="dbPass" type="password">
+
+    <label>Database Name</label>
+    <input id="dbName">
+
+    <label>Port (optional)</label>
+    <input id="port" type="number" placeholder="3306">
+
+    <button id="saveDbBtn">Save Database</button>
+    <p id="msg"></p>
+  </div>
+</main>
+
+<script src="script-admin-db.js"></script>
+</body>
+</html>

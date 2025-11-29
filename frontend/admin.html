@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Admin — Manage Users</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    input,
+    select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 14px;
+      margin-top: 6px;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s ease;
+      background: #fff;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.25);
+    }
+
+    label {
+      font-weight: 600;
+      margin: 8px 0 4px;
+      display: block;
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
+
+    #dbAssignSection {
+      display: block;
+    }
+
+    #msg {
+      margin-top: 1rem;
+      font-weight: 600;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header style="padding:20px;">
+    <button onclick="goBack()" class="secondary">⬅ Back</button>
+  </header>
+
+  <main class="container">
+    <h1>Manage Users</h1>
+
+    <!-- CREATE USER -->
+    <div class="card">
+      <h3>Create New User</h3>
+
+      <label>Email</label>
+      <input id="newEmail" type="email" placeholder="Enter email">
+
+      <label>Password</label>
+      <input id="newPass" type="password" placeholder="Enter password">
+
+      <label>Role</label>
+      <select id="newRole">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <!-- DB ASSIGN SECTION (HIDDEN for Admin role) -->
+      <div id="dbAssignSection">
+        <label>Assign Database</label>
+        <select id="assignDbSelector">
+          <option>Loading...</option>
+        </select>
+      </div>
+
+      <button id="createBtn">Create User</button>
+    </div>
+
+    <!-- DEACTIVATE USER -->
+    <div class="card">
+      <h3>Deactivate User</h3>
+      <label>User Email</label>
+      <input id="deactEmail" type="email" placeholder="Enter email">
+
+      <button id="deactBtn" class="secondary">Deactivate</button>
+    </div>
+
+    <p id="msg"></p>
+  </main>
+
+  <script src="script-admin-user.js"></script>
+</body>
+
+</html>

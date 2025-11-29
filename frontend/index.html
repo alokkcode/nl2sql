@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>SQL Agent — Natural Language to SQL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header style="padding:20px; display:flex; justify-content:space-between;">
+    <div style="font-size:1.3rem; font-weight:600;">🧠 SQL Agent</div>
+
+    <div>
+      <select id="dbSelect" class="secondary hidden" style="margin-right:10px;">
+      </select>
+
+      <button id="dbBtn" class="secondary hidden">DB Config</button>
+      <button id="createUserBtn" class="secondary hidden">Create User</button>
+      <button id="logoutBtn" class="secondary">Sign Out</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>🧠 SQL Agent</h1>
+    <p class="subtitle">Talk to your database in plain English.</p>
+
+    <div class="card">
+      <label>Your Question</label>
+      <textarea id="query" placeholder="e.g. Show total sales by category"></textarea>
+      <button id="generateBtn">Generate SQL</button>
+    </div>
+
+    <div class="card hidden" id="sqlCard">
+      <label>Generated SQL</label>
+      <pre id="sqlBox" class="readonly"></pre>
+      <div id="validationBox"></div>
+      <button id="runBtn" class="secondary hidden">Run Query</button>
+    </div>
+
+    <div class="card hidden" id="resultCard">
+      <label>Results</label>
+      <table id="resultTable"></table>
+      <p id="summary"></p>
+    </div>
+  </main>
+
+  <footer>⚙️ Powered by Gemini + LangChain + MySQL</footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

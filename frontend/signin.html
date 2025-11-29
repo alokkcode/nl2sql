@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Sign In for SQL Agent</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            margin-top: 6px;
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.2s ease;
+        }
+
+        input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.25);
+        }
+
+        .signin-card {
+            max-width: 420px;
+            margin: 100px auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .signin-card button {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            text-align: left;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signin-card">
+        <h1 style="color:var(--accent); margin-bottom:1rem;">Sign In</h1>
+
+        <label>Email</label>
+        <input id="email" type="email" placeholder="Enter your email" />
+
+        <label>Password</label>
+        <input id="password" type="password" placeholder="Enter your password" />
+
+        <button id="loginBtn">Continue</button>
+
+        <p id="msg" style="color:red; margin-top:1rem;"></p>
+    </div>
+
+    <script>
+        document.getElementById("loginBtn").addEventListener("click", async () => {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            const res = await fetch("http://localhost:5000/auth/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await res.json();
+            if (!res.ok) {
+                document.getElementById("msg").innerText = data.error;
+                return;
+            }
+
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("role", data.user.role);
+
+            window.location.href = "index.html";
+        });
+    </script>
+
+</body>
+
+</html>

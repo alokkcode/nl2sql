@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>SQL Agent</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="container" style="text-align:center; margin-top:100px;">
+        <h1 style="font-size:3rem; color:#ff7a00;">SQL Agent</h1>
+        <p class="subtitle" style="font-size:1.2rem;">Talk to your database using natural language.</p>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/6488/6488678.png" alt="AI DB"
+            style="width:200px; opacity:0.9; margin:30px auto; display:block;" />
+
+        <div style="margin-top:30px;">
+            <a href="signin.html">
+                <button style="padding:12px 22px; font-size:1rem;">Sign In</button>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        if (localStorage.getItem("token")) {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>
